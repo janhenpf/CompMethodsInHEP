@@ -1,0 +1,68 @@
+\documentclass[a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz}
+\usepackage{feynmf}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\title{Computing Methods in HEP - Exercise 1}
+\author{Jan Hendrik Pfau}
+\date{28.01.2022}
+
+\begin{document}
+
+\maketitle
+
+Unfortunately, I did not manage to change the positions of the internal vertices.
+
+\begin{fmffile}{diagram}
+    \begin{figure}[h!]
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+		\begin{fmfgraph*}(150,100)
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}
+			\fmf{fermion}{i1,v1,v2,i2}
+			\fmf{photon}{v1,o1}
+			\fmf{photon}{v2,o2}
+			    \put(0,100){$e^{+}$}
+			    \put(0,-5){$e^{-}$}
+			    \put(140,100){$\gamma$}
+			    \put(140,-5){$\gamma$}
+		\end{fmfgraph*}
+        \label{fig:f1}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+		\begin{fmfgraph}(150,100)
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}
+			\fmf{fermion}{i1,v1,v2,i2}
+			\fmf{photon}{v1,o1}
+			\fmf{photon}{v2,o2}
+			    \put(-150,100){$e^{+}$}
+			    \put(-150,-5){$e^{-}$}
+			    \put(-10,100){$\gamma$}
+			    \put(-10,-5){$\gamma$}
+		\end{fmfgraph}
+        \label{fig:f2}
+        \end{subfigure}
+        \caption{Feynman graphs for the lowest order contributions to electron-positron annihilation \cite{ref1992}.}
+    \end{figure}
+\end{fmffile}
+
+This file was created with Overleaf. A makefile should look similar to this:
+
+\begin{verbatim}
+    Exercise1_Pfau_JanHendrik.pdf: Exercise1_Pfau_JanHendrik.tex
+        pdflatex Exercise1_Pfau_JanHendrik.tex
+\end{verbatim}
+
+\bibliographystyle{plain}
+\bibliography{bib_ex1.bib}
+
+\end{document}
