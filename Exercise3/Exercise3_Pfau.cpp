@@ -24,11 +24,12 @@ void measure::coord (double x, double y) {
     y_coord = y;
 }
 
+/* The following part can be found in the file "testprogram.cpp".
 int main () {
     measure m1;
     m1.matrix (0.1,0.1,0.0);
     m1.coord (1,2);
     /* print the value of r for x=1 and y=2: */
-    cout << "r = " << m1.r() << endl;
+    /*cout << "r = " << m1.r() << endl;
     return 0;
-}
+}*/
